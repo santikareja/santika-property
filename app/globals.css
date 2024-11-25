@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+  
+  /* Navy colors */
+  --primary: 222 47% 31%;
+  --primary-foreground: 0 0% 100%;
+  
+  /* Card and UI elements */
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+  
+  /* Secondary colors */
+  --secondary: 220 14% 96%;
+  --secondary-foreground: 222 47% 11%;
+  
+  /* Muted elements */
+  --muted: 220 14% 96%;
+  --muted-foreground: 222 47% 40%;
+  
+  /* Accent colors */
+  --accent: 220 14% 96%;
+  --accent-foreground: 222 47% 11%;
+  
+  /* Destructive */
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  
+  /* Borders and inputs */
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --ring: 222 47% 31%;
+  
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 222 47% 11%;
+  --foreground: 0 0% 100%;
+  
+  /* Navy colors in dark mode */
+  --primary: 222 47% 50%;
+  --primary-foreground: 0 0% 100%;
+  
+  /* Card and UI elements */
+  --card: 222 47% 11%;
+  --card-foreground: 0 0% 100%;
+  --popover: 222 47% 11%;
+  --popover-foreground: 0 0% 100%;
+  
+  /* Secondary colors */
+  --secondary: 222 47% 20%;
+  --secondary-foreground: 0 0% 100%;
+  
+  /* Muted elements */
+  --muted: 222 47% 20%;
+  --muted-foreground: 215 20% 75%;
+  
+  /* Accent colors */
+  --accent: 222 47% 20%;
+  --accent-foreground: 0 0% 100%;
+  
+  /* Destructive */
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 0 0% 100%;
+  
+  /* Borders and inputs */
+  --border: 222 47% 20%;
+  --input: 222 47% 20%;
+  --ring: 222 47% 50%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Improve link contrast */
+  a {
+    @apply transition-colors duration-200;
+  }
+  a:hover {
+    @apply text-primary;
+  }
+  
+  /* Improve text contrast in cards */
+  .bg-card {
+    @apply shadow-sm;
+  }
+  
+  /* Better contrast for muted text */
+  .text-muted-foreground {
+    @apply text-navy-600 dark:text-navy-300;
+  }
+  
+  /* Improved button hover states */
+  .button-primary {
+    @apply bg-primary text-white hover:bg-primary/90 transition-colors;
+  }
+  
+  /* Better focus states */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2;
+  }
+}
+
+/* Custom utility classes for navy colors */
+@layer utilities {
+  .bg-navy-50 { @apply bg-[#F8FAFC]; }
+  .bg-navy-100 { @apply bg-[#F1F5F9]; }
+  .bg-navy-200 { @apply bg-[#E2E8F0]; }
+  .bg-navy-300 { @apply bg-[#CBD5E1]; }
+  .bg-navy-400 { @apply bg-[#94A3B8]; }
+  .bg-navy-500 { @apply bg-[#64748B]; }
+  .bg-navy-600 { @apply bg-[#475569]; }
+  .bg-navy-700 { @apply bg-[#334155]; }
+  .bg-navy-800 { @apply bg-[#1E293B]; }
+  .bg-navy-900 { @apply bg-[#0F172A]; }
+  
+  .text-navy-50 { @apply text-[#F8FAFC]; }
+  .text-navy-100 { @apply text-[#F1F5F9]; }
+  .text-navy-200 { @apply text-[#E2E8F0]; }
+  .text-navy-300 { @apply text-[#CBD5E1]; }
+  .text-navy-400 { @apply text-[#94A3B8]; }
+  .text-navy-500 { @apply text-[#64748B]; }
+  .text-navy-600 { @apply text-[#475569]; }
+  .text-navy-700 { @apply text-[#334155]; }
+  .text-navy-800 { @apply text-[#1E293B]; }
+  .text-navy-900 { @apply text-[#0F172A]; }
+}
